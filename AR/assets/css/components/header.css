@@ -48,6 +48,10 @@
     transition: all 0.2s;
 }
 
+.navigation-bar .links-bar .desktop-print svg {
+    height: 30px;
+}
+
 .navigation-bar .close-btn,
 .navigation-bar .search-mobile,
 .navigation-bar .links-bar .sub-menu {
@@ -834,6 +838,10 @@
         bottom: 0;
         height: auto;
         width: 100%;
+    }
+
+    .navigation-bar .links-bar .desktop-print {
+        display: none;
     }
 
     .navigation-bar .tools-bar>.container .col-lg-4 {
