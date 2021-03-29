@@ -53,6 +53,10 @@
     display: none;
 }
 
+.navigation-bar .links-bar .desktop-print svg {
+    height: 30px;
+}
+
 .navigation-bar.fixed {
     position: fixed;
     top: 0;
@@ -806,6 +810,10 @@
 
     .navigation-bar>* {
         width: 100vw !important;
+    }
+
+    .navigation-bar .links-bar .desktop-print {
+        display: none;
     }
 
     .navigation-bar .tools-bar {

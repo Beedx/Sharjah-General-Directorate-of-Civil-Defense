@@ -252,6 +252,7 @@ a.primary-btn {
     --marker: #FAE7B2;
     --dark-red: #C1311B;
     --caramel: #9F8256;
+    --color-filter: brightness(0) saturate(100%) invert(18%) sepia(81%) saturate(6127%) hue-rotate(153deg) brightness(98%) contrast(87%);
 
     /*
       --------- 

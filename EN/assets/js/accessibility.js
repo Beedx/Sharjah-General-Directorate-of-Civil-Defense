@@ -11,7 +11,12 @@ let colorInverted = Boolean(window.localStorage.getItem('ColorInverted'));
 
 // Declare Functionality
 function changeColor(color) {
-
+    let colorFilter = color.colorName === 'caramel' ?
+        'brightness(0) saturate(100%) invert(58%) sepia(27%) saturate(619%) hue-rotate(357deg) brightness(85%) contrast(82%)'
+        : color.colorName === 'black' ? 'brightness(0) saturate(100%) invert(0%) sepia(10%) saturate(7457%) hue-rotate(345deg) brightness(104%) contrast(98%)'
+            : color.colorName === 'green default' ? 'brightness(0) saturate(100%) invert(18%) sepia(81%) saturate(6127%) hue-rotate(153deg) brightness(98%) contrast(87%)'
+                : color.colorName === 'red' ? 'brightness(0) saturate(100%) invert(22%) sepia(50%) saturate(4373%) hue-rotate(355deg) brightness(85%) contrast(86%)'
+                    : 'brightness(0) saturate(100%) invert(18%) sepia(81%) saturate(6127%) hue-rotate(153deg) brightness(98%) contrast(87%)'
     
     // If the color is set
     if (color.currentColor) {
@@ -30,12 +35,18 @@ function changeColor(color) {
             $(':root').css('--dark-green', 'linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) ' + color.currentColor);
         }
 
+        $('.is-icon').each(function () {
+            $(this).css('filter', colorFilter);
+            $(':root').css('--color-filter', colorFilter);
+        });
+
         $('.is-svg').each(function () {
             if ($(this).css('fill') !== "none") {
                 $(this).css('fill', color.currentColor);
             }
         });
 
+        $(':root').css('--color-filter', colorFilter);
         $(':root').css('--secondary-green', color.currentColor);
     }
 }
@@ -166,7 +177,7 @@ changeFontSize(fontSize);
 
 if (colorInverted) {
     $('html').addClass('inverted').addClass('invert-colors');
-    $('.accessibility-settings .window .options-list .option .switch span.disabled').addClass('active').siblings().removeClass('active');
+    $('.accessibility-settings .window .options-list .option .colors-inverter span.disabled').addClass('active').siblings().removeClass('active');
 }
 
 
@@ -291,7 +302,7 @@ $('.accessibility-settings .window .options-list .option .color-changer .color')
  *  Colors Inverter
  * ===========================
  */
-$('.accessibility-settings .window .options-list .option .switch span').click(function () {
+$('.accessibility-settings .window .options-list .option .colors-inverter span').click(function () {
     $(this).addClass('active').siblings().removeClass('active');
 
     if ($(this).hasClass('disabled')) {
@@ -309,11 +320,26 @@ $('.accessibility-settings .window .options-list .option .switch span').click(fu
 
 /**
  * ===========================
+ *  Speaker
+ * ===========================
+ */
+$('.accessibility-settings .window .options-list .option .open-speaker span').click(function () {
+    $(this).addClass('active').siblings().removeClass('active');
+});
+
+/**
+ * ===========================
  *  Print Document
  * ===========================
  */
 $('.accessibility-settings .window .options-list .option .print-page .print-doc').click(function () {
     window.print();
+});
+
+$('.navigation-bar .links-bar .desktop-print').click(function () {
+    window.print();
+
+    return false;
 });
 
 $('.mobile-bar .mobile-print').click(function () {

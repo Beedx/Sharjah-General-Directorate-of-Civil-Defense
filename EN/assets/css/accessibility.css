@@ -170,7 +170,11 @@
 }
 
 .invert-colors .block .icon {
-    background: var(--black);
+    background: #7c857f1a;
+}
+
+.invert-colors .block .icon .is-icon {
+    filter: brightness(0) invert(0) !important;
 }
 
 .invert-colors .block .is-svg {
@@ -205,10 +209,29 @@
     color: #fff;
 }
 
+.invert-colors .slider-block.partners .block .partner-logo:hover .hover-effect {
+    z-index: 999;
+}
+
 .invert-colors .events .block .event .hover-effect {
     z-index: 9;
 }
 
 .invert-colors .events .block .event {
     background: #f9f9f9;
+}
+
+.invert-colors footer .main .quick-links ul li a:hover,
+.invert-colors footer .links-bar menu a:hover {
+    color: rgb(105, 105, 105) !important;
+}
+
+/**
+  * ==========================================
+  *     Color Switch
+  * ==========================================
+  */
+.color-changed.color-black footer .main .quick-links ul li a:hover,
+.color-changed.color-black footer .links-bar menu a:hover {
+    color: rgb(105, 105, 105) !important;
 }
