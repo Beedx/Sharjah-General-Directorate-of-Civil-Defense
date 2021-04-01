@@ -11,12 +11,6 @@ let colorInverted = Boolean(window.localStorage.getItem('ColorInverted'));
 
 // Declare Functionality
 function changeColor(color) {
-    let colorFilter = color.colorName === 'caramel' ?
-        'brightness(0) saturate(100%) invert(58%) sepia(27%) saturate(619%) hue-rotate(357deg) brightness(85%) contrast(82%)'
-        : color.colorName === 'black' ? 'brightness(0) saturate(100%) invert(0%) sepia(10%) saturate(7457%) hue-rotate(345deg) brightness(104%) contrast(98%)'
-            : color.colorName === 'green default' ? 'brightness(0) saturate(100%) invert(18%) sepia(81%) saturate(6127%) hue-rotate(153deg) brightness(98%) contrast(87%)'
-                : color.colorName === 'red' ? 'brightness(0) saturate(100%) invert(22%) sepia(50%) saturate(4373%) hue-rotate(355deg) brightness(85%) contrast(86%)'
-                    : 'brightness(0) saturate(100%) invert(18%) sepia(81%) saturate(6127%) hue-rotate(153deg) brightness(98%) contrast(87%)'
     
     // If the color is set
     if (color.currentColor) {
@@ -42,13 +36,14 @@ function changeColor(color) {
         }
 
         $('.is-icon').each(function () {
-            $(this).css('filter', colorFilter);
+            // $(this).css('filter', colorFilter);
             $(':root').css('--color-filter', colorFilter);
         });
 
         $('.is-svg').each(function () {
             if ($(this).css('fill') !== "none") {
-                $(this).css('fill', color.currentColor);
+                // $(this).css('fill', color.currentColor);
+                $(':root').css('--secondary-green', color.currentColor);
             }
         });
 
