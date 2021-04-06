@@ -55,6 +55,10 @@
     resize: none;
 }
 
+.default-form form .group input#cv {
+    padding-left: 40px;
+}
+
 .default-form form .group input[type="file"] {
     display: none;
 }

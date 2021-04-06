@@ -492,6 +492,7 @@
     width: 30px;
     height: 30px;
     justify-content: center;
+    z-index: 99;
 }
 
 .accessibility-settings .window .close-window i {
