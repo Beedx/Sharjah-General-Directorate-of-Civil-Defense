@@ -845,6 +845,10 @@
         display: none;
     }
 
+    .tools-bar .tools .tool.print .desktop-print svg path{
+        fill: var(--white) !important;
+    }
+    
     .navigation-bar .tools-bar>.container .col-lg-4 {
         position: absolute;
         top: -56px !important;
