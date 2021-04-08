@@ -39,6 +39,7 @@
     color: var(--white);
     font: var(--small-size-semi-bold);
     line-height: 29px;
+    height: fit-content;
 }
 
 /* Search Form */
@@ -67,6 +68,16 @@
     top: 50%;
     transform: translateY(-57%);
     right: 15px;
+}
+
+.page-header .page-tools .title.service {
+    font: var(--big-size-bold);
+    color: var(--dark-gray);
+    margin-bottom: 0;
+    margin-right: 20px;
+    width: 80%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .page-header .page-tools .title {

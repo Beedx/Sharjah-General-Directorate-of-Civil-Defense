@@ -344,6 +344,12 @@ $('.navigation-bar .links-bar .desktop-print').click(function () {
     return false;
 });
 
+$('.tools-bar .tools .tool.print .desktop-print').click(function () {
+    window.print();
+
+    return false;
+});
+
 $('.mobile-bar .mobile-print').click(function () {
     window.print();
 
